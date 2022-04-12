@@ -1,0 +1,7 @@
+name: GitPuller
+version: '${project.version}'
+main: me.plawn.gitpuller.GitPuller
+api-version: 1.8
+authors: [ Plawn ]
+commands:
+  pull:
