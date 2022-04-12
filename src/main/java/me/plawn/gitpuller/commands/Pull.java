@@ -40,6 +40,10 @@ public class Pull implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         final String pluginName = args[0];
+        if(!sender.hasPermission("gitpuller.pull")){
+            sender.sendMessage(ChatColor.RED+"You cannot do that");
+            return false;
+        }
         sender.sendMessage(ChatColor.GREEN+String.format("Updating %s",pluginName));
         if(!available){
             sender.sendMessage(ChatColor.RED+"Another pull task is running. Please try again later");

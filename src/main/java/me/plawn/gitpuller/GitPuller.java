@@ -1,6 +1,8 @@
 package me.plawn.gitpuller;
 
 import me.plawn.gitpuller.commands.Pull;
+import org.bukkit.Bukkit;
+import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.rauschig.jarchivelib.ArchiveFormat;
 import org.rauschig.jarchivelib.ArchiverFactory;
