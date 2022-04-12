@@ -3,6 +3,7 @@ package me.plawn.gitpuller.commands;
 import com.google.common.base.Throwables;
 import me.plawn.gitpuller.GitPuller;
 import me.plawn.gitpuller.utils.StringUtils;
+import org.apache.commons.lang.SystemUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -82,7 +83,7 @@ public class Pull implements CommandExecutor {
                     sender.sendMessage(ChatColor.GREEN+"Building jar");
                     ProcessBuilder builder = new ProcessBuilder(
                             String.format(
-                                    "%s\\maven\\apache-maven-3.8.5\\bin\\mvn.cmd",
+                                    "%s\\maven\\apache-maven-3.8.5\\bin\\mvn"+ (SystemUtils.IS_OS_WINDOWS ? ".cmd" : ""),
                                     GitPuller.getInstance().getDataFolder().getAbsolutePath()),
                             "clean",
                             "package");
