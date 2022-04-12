@@ -2,6 +2,7 @@ package me.plawn.gitpuller.commands;
 
 import com.google.common.base.Throwables;
 import me.plawn.gitpuller.GitPuller;
+import me.plawn.gitpuller.utils.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -23,6 +24,8 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.lang.reflect.Method;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class Pull implements CommandExecutor {
 
@@ -85,6 +88,8 @@ public class Pull implements CommandExecutor {
                             "package");
                     builder.directory(new File(localRepoPath));
                     builder.redirectOutput(new File(localRepoPath+"/build.log"));
+                    String buildLog = new String(Files.readAllBytes(Paths.get(localRepoPath + "/build.log")));
+                    sender.sendMessage(ChatColor.GREEN+"Build log can be found here: "+ChatColor.GOLD+StringUtils.saveToHastebin(buildLog));
                     Process p = builder.start();
                     while(p.isAlive()){
                     }
