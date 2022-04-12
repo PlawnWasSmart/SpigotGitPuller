@@ -24,4 +24,5 @@ plugins:
 # Permissions
 
 Permission | Description
+--- | ---
 `gitpuller.pull` | Permission for the pull commanad
