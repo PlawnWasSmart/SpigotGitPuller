@@ -20,3 +20,8 @@ plugins:
   <PluginName>: <GitURI>
   <PluginName>: <GitURI>
 ```
+
+# Permissions
+
+Permission | Description
+`gitpuller.pull` | Permission for the pull commanad
